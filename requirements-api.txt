@@ -1,0 +1,15 @@
+# Runtime + training dependencies for the API image (training can run in the same image).
+pandas>=2.1
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+scikit-learn>=1.4
+xgboost>=2.0
+imbalanced-learn>=0.12
+shap>=0.45
+joblib>=1.3
+fastapi>=0.110
+pydantic>=2.6
+uvicorn[standard]>=0.27
+sqlalchemy>=2.0
+psycopg2-binary>=2.9

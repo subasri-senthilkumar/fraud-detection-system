@@ -1,0 +1,284 @@
+{
+  "model_version": "1.0.0-20261009145656",
+  "model_type": "XGBoost",
+  "model_key": "xgboost",
+  "trained_at": "2026-10-09T14:56:56.614900+00:00",
+  "decision_threshold": 0.33979475498199463,
+  "threshold_beta": 2.0,
+  "best_params": {
+    "subsample": 0.7,
+    "n_estimators": 400,
+    "min_child_weight": 5,
+    "max_depth": 3,
+    "learning_rate": 0.1,
+    "gamma": 0,
+    "colsample_bytree": 1.0
+  },
+  "best_overall_by_selection_score": "xgboost",
+  "selection_scores": {
+    "logistic_regression": 0.804276717344025,
+    "random_forest": 0.8069452465519388,
+    "xgboost": 0.8210832852060322
+  },
+  "test_metrics": {
+    "threshold": 0.33979475498199463,
+    "precision": 0.7358490566037735,
+    "recall": 0.8125,
+    "f1": 0.7722772277227723,
+    "roc_auc": 0.9869876700680272,
+    "pr_auc": 0.8704558291936271,
+    "tn": 11690,
+    "fp": 70,
+    "fn": 45,
+    "tp": 195
+  },
+  "comparison": [
+    {
+      "Model": "logistic_regression",
+      "Split": "validation (OOF)",
+      "Threshold": 0.6039639479,
+      "Precision": 0.7847439916,
+      "Recall": 0.7831074035,
+      "F1": 0.7839248434,
+      "ROC-AUC": 0.9794874212,
+      "PR-AUC": 0.8457979051,
+      "TP": 751,
+      "FP": 206,
+      "FN": 208,
+      "TN": 46835
+    },
+    {
+      "Model": "random_forest",
+      "Split": "validation (OOF)",
+      "Threshold": 0.4341991898,
+      "Precision": 0.6925764192,
+      "Recall": 0.826903024,
+      "F1": 0.7538022814,
+      "ROC-AUC": 0.9808950411,
+      "PR-AUC": 0.8401304343,
+      "TP": 793,
+      "FP": 352,
+      "FN": 166,
+      "TN": 46689
+    },
+    {
+      "Model": "xgboost",
+      "Split": "validation (OOF)",
+      "Threshold": 0.339794755,
+      "Precision": 0.7538461538,
+      "Recall": 0.8175182482,
+      "F1": 0.7843921961,
+      "ROC-AUC": 0.9823039689,
+      "PR-AUC": 0.8613394113,
+      "TP": 784,
+      "FP": 256,
+      "FN": 175,
+      "TN": 46785
+    },
+    {
+      "Model": "logistic_regression",
+      "Split": "test",
+      "Threshold": 0.6039639479,
+      "Precision": 0.7975206612,
+      "Recall": 0.8041666667,
+      "F1": 0.8008298755,
+      "ROC-AUC": 0.9817120181,
+      "PR-AUC": 0.8539887279,
+      "TP": 193,
+      "FP": 49,
+      "FN": 47,
+      "TN": 11711
+    },
+    {
+      "Model": "random_forest",
+      "Split": "test",
+      "Threshold": 0.4341991898,
+      "Precision": 0.6827586207,
+      "Recall": 0.825,
+      "F1": 0.7471698113,
+      "ROC-AUC": 0.9870039683,
+      "PR-AUC": 0.862466293,
+      "TP": 198,
+      "FP": 92,
+      "FN": 42,
+      "TN": 11668
+    },
+    {
+      "Model": "xgboost",
+      "Split": "test",
+      "Threshold": 0.339794755,
+      "Precision": 0.7358490566,
+      "Recall": 0.8125,
+      "F1": 0.7722772277,
+      "ROC-AUC": 0.9869876701,
+      "PR-AUC": 0.8704558292,
+      "TP": 195,
+      "FP": 70,
+      "FN": 45,
+      "TN": 11690
+    }
+  ],
+  "class_distribution": {
+    "legitimate": 58801,
+    "fraud": 1199,
+    "fraud_rate": 0.019983333333333332,
+    "imbalance_ratio": 49.04170141784821
+  },
+  "cleaning_report": {
+    "rows_in": 60120,
+    "duplicates_removed": 120,
+    "unlabelled_removed": 0,
+    "missing_values": {
+      "distance_from_home_km": 190,
+      "avg_amount_30d": 188
+    },
+    "rows_out": 60000
+  },
+  "n_train": 48000,
+  "n_test": 12000,
+  "smote": {
+    "type": "SMOTENC",
+    "sampling_strategy": 0.2,
+    "k_neighbors": 5,
+    "applied_to": "training folds only"
+  },
+  "transformed_feature_names": [
+    "amount",
+    "amount_log",
+    "account_age_days",
+    "distance_from_home_km",
+    "distance_log",
+    "txn_count_24h",
+    "avg_amount_30d",
+    "amount_to_avg_ratio",
+    "time_since_last_txn_min",
+    "hour",
+    "is_new_device",
+    "country_mismatch",
+    "is_night",
+    "is_weekend",
+    "is_rapid_succession",
+    "is_high_velocity",
+    "is_new_account",
+    "merchant_category_grocery",
+    "merchant_category_restaurant",
+    "merchant_category_fuel",
+    "merchant_category_travel",
+    "merchant_category_electronics",
+    "merchant_category_clothing",
+    "merchant_category_entertainment",
+    "merchant_category_health",
+    "merchant_category_online_services",
+    "payment_channel_pos",
+    "payment_channel_online",
+    "payment_channel_mobile_app",
+    "payment_channel_atm",
+    "device_type_mobile",
+    "device_type_desktop",
+    "device_type_tablet",
+    "device_type_pos_terminal"
+  ],
+  "global_importance": [
+    {
+      "feature": "merchant_category",
+      "label": "Merchant category",
+      "mean_abs_shap": 4.78806
+    },
+    {
+      "feature": "txn_count_24h",
+      "label": "Transactions in last 24h",
+      "mean_abs_shap": 1.00919
+    },
+    {
+      "feature": "payment_channel",
+      "label": "Payment channel",
+      "mean_abs_shap": 0.84404
+    },
+    {
+      "feature": "distance_from_home_km",
+      "label": "Distance from home",
+      "mean_abs_shap": 0.5562
+    },
+    {
+      "feature": "amount_to_avg_ratio",
+      "label": "Amount vs. 30-day average",
+      "mean_abs_shap": 0.48312
+    },
+    {
+      "feature": "time_since_last_txn_min",
+      "label": "Minutes since previous transaction",
+      "mean_abs_shap": 0.37881
+    },
+    {
+      "feature": "hour",
+      "label": "Transaction hour",
+      "mean_abs_shap": 0.34861
+    },
+    {
+      "feature": "distance_log",
+      "label": "Distance from home (log)",
+      "mean_abs_shap": 0.33772
+    },
+    {
+      "feature": "is_new_device",
+      "label": "New device",
+      "mean_abs_shap": 0.31715
+    },
+    {
+      "feature": "is_night",
+      "label": "Night-time transaction",
+      "mean_abs_shap": 0.30199
+    },
+    {
+      "feature": "is_weekend",
+      "label": "Weekend transaction",
+      "mean_abs_shap": 0.27277
+    },
+    {
+      "feature": "account_age_days",
+      "label": "Account age",
+      "mean_abs_shap": 0.26173
+    },
+    {
+      "feature": "amount_log",
+      "label": "Transaction amount (log)",
+      "mean_abs_shap": 0.18447
+    },
+    {
+      "feature": "amount",
+      "label": "Transaction amount",
+      "mean_abs_shap": 0.16229
+    },
+    {
+      "feature": "device_type",
+      "label": "Device type",
+      "mean_abs_shap": 0.13915
+    },
+    {
+      "feature": "country_mismatch",
+      "label": "Country mismatch",
+      "mean_abs_shap": 0.13124
+    },
+    {
+      "feature": "avg_amount_30d",
+      "label": "Customer 30-day average amount",
+      "mean_abs_shap": 0.1276
+    },
+    {
+      "feature": "is_new_account",
+      "label": "New account",
+      "mean_abs_shap": 0.05692
+    },
+    {
+      "feature": "is_rapid_succession",
+      "label": "Rapid succession of transactions",
+      "mean_abs_shap": 0.00811
+    },
+    {
+      "feature": "is_high_velocity",
+      "label": "High transaction frequency",
+      "mean_abs_shap": 0.00436
+    }
+  ],
+  "seed": 42
+}
